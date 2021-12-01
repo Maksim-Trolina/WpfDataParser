@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="DataParserApp.Views.LoadingScreenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             mc:Ignorable="d">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <dx:SimpleButton
+                         HorizontalAlignment="Right"
+                         VerticalAlignment="Top"
+                         Command="{Binding Tag}"
+                         Glyph="{dx:DXImage GrayScaleImages/Edit/Delete_16x16.png}"
+                         ToolTip="Cancel and Close"/>
+        <dxe:ProgressBarEdit Grid.Row="1"
+                     Width="360"    
+                     Height="16"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Value="{Binding Progress}"/>
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"    
+                   Text="{Binding Status}" />
+    </Grid>
+</UserControl>
